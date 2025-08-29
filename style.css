@@ -269,7 +269,9 @@ h1 {
 
 .uncho__comment {
   font-size: 50px;
-  font-family: "HGS行書体", cursive;
+  font-family: "HGS行書体", "Yuji Boku", cursive;
+  font-weight: 400;
+  font-style: normal;
   color: white;
   padding-top: 30px;
 }
@@ -606,7 +608,7 @@ h1 {
 .location__map iframe {
   aspect-ratio: 16/9;
   display: block;
-  width: 80%;
+  width: 60%;
   margin-top: 25px;
   border: solid 5px #0069a2;
   padding: 0px;
@@ -673,9 +675,6 @@ h1 {
   text-align: center;
   justify-content: center;
 }
-
-
-/* /footer */
 
 @charset "utf-8";
 
@@ -953,6 +952,7 @@ h1 {
     font-size: 35px;
     font-family: "HGS行書体", cursive;
     padding-top: 30px;
+    display: ;
   }
 
   /* /title */
@@ -1071,6 +1071,10 @@ h1 {
     left: 40px;
   }
 
+  .location__map iframe {
+    width: 70%;
+  }
+
   .footer__schoolname {
     font-size: 16px;
     display: block;
@@ -1096,3 +1100,6 @@ h1 {
     text-align: center;
   }
 }
+
+
+/* /footer */
