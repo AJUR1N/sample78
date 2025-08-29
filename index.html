@@ -46,11 +46,11 @@
           <nav class="site__menu nav__content" id="js-nav">
             <ul class="nav__items nav__list">
               <li class="nav__items__item"><a
-                  href="https://ajur1n.github.io/sample78/#top-anchor">Top</a></li>
+                  href="#top-anchor">Top</a></li>
               <li class="nav__items__item"><a
-                  href="https://ajur1n.github.io/sample78/#about-anchor">About</a></li>
+                  href="#about-anchor">About</a></li>
               <li class="nav__items__item"><a
-                  href="https://ajur1n.github.io/sample78/#location-anchor">Location</a></li>
+                  href="#location-anchor">Location</a></li>
               <!--               <li class="nav__items__item"><a
                   href="program-anchor">Program</a></li>
               <li class="nav__items__item"><a
@@ -85,19 +85,17 @@
                 nav.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
                 mgn.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
 
+                const isExpanded = e.currentTarget.getAttribute("aria-expanded") !== "false";
+                e.currentTarget.setAttribute("aria-expanded", !isExpanded);
+  
+                document.documentElement.classList.toggle("is-drawerActive");
+
                 });
 
               /* ハンバーガーボタンのアニメーション */
                 const hamburgerButton = document.querySelector('#js-buttonHamburger');
 
                 hamburgerButton.addEventListener('click', (e) => {
-                const isExpanded = e.currentTarget.getAttribute("aria-expanded") !== "false";
-                e.currentTarget.setAttribute("aria-expanded", !isExpanded);
-  
-                document.documentElement.classList.toggle("is-drawerActive");
-                })
-
-                nav.addEventListener('click', (e) => {
                 const isExpanded = e.currentTarget.getAttribute("aria-expanded") !== "false";
                 e.currentTarget.setAttribute("aria-expanded", !isExpanded);
   
@@ -149,7 +147,7 @@
         <div id="about-anchor"></div>
 
         <div class="slogan">
-          <h1 class="titles">slogan</h1>
+          <h1 class="titles">Slogan</h1>
           <div class="slogan__inner">
             <img src="img/題字/78th夏_スローガン_気魄-removebg-preview.png" alt="slogan">
             <div class="slogan__text">
@@ -161,7 +159,7 @@
                 この「魄」という文字は、「我々の体躯に漲る、<br class="br__pc">
                 気概や気合といった”たましい”そのもの」という意味であり、<br>
                 我々修猷生は、この修猷生による修猷生のための<br class="br__pc">
-                修猷大運動会に、文字通り全身全霊、”魄”を懸け、<br class="br__pc">
+                修猷大運動会に、文字通り全身全霊、“魄”を懸け、<br class="br__pc">
                 修猷生個々の強い覚悟や決意を示す。<br>
                 我々ならば、修猷生の持つ気魄を余すことなく発揮し、<br class="br__pc">
                 修猷生の心に永久に刻まれるような、過去最高の大運動会を<br class="br__pc">
@@ -338,7 +336,7 @@ $( document ).ready(function() {
       <!-- location__map -->
       <div class="location__map">
         <div id="location-anchor"></div>
-        <h1 class="titles">location</h1>
+        <h1 class="titles">Location</h1>
         <div class="google__map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.8249995230126!2d130.35634102207928!3d33.583892712281575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354193a435436e39%3A0x27c45e52483debbe!2z56aP5bKh55yM56uL5L-u54y36aSo6auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1754528846644!5m2!1sja!2sjp"
@@ -360,11 +358,11 @@ $( document ).ready(function() {
         <nav class="footer__site__menu">
           <ul class="footer__nav__items">
             <li class="footer__nav__items__item"><a
-                href="https://ajur1n.github.io/sample78/#top-anchor">Top</a></li>
+                href="#top-anchor">Top</a></li>
             <li class="footer__nav__items__item"><a
-                href="https://ajur1n.github.io/sample78/#about-anchor">About</a></li>
+                href="#about-anchor">About</a></li>
             <li class="footer__nav__items__item"><a
-                href="https://ajur1n.github.io/sample78/#location-anchor">Location</a></li>
+                href="#location-anchor">Location</a></li>
             <!--             <li class="footer__nav__items__item"><a
                 href="#artworks-anchor">Artworks</a></li>
             <li class="footer__nav__items__item"><a
