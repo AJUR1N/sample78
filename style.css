@@ -293,7 +293,7 @@ h1 {
 .slogan h1 {
   position: relative;
   font-weight: bold;
-  margin-left: 40px;
+  margin-left: 80px;
 }
 
 .slogan__inner {
@@ -310,7 +310,7 @@ h1 {
 }
 
 .slogan__text p {
-  background-color: rgba(10, 10, 10, 0.2);
+  background-color: rgba(10, 10, 10, 0.7);
   font-family: ;
   padding: 5px 0 5px;
   max-height: 100%;
@@ -320,6 +320,7 @@ h1 {
   box-shadow: 2px black;
   text-align: left;
   margin-top: 50px;
+  color: white;
 }
 
 .slogan__inner img {
@@ -340,14 +341,14 @@ h1 {
   position: relative;
   background-size: cover;
   min-height: 100%;
-  padding: 40px 3vw 40px;
+  padding: 120px 3vw 40px;
   background: linear-gradient(210deg, #cbf8ff, #fff4e3);
 }
 
 .messages h1 {
-  position: relative;
-  top: -20px;
-  left: 20px;
+  position: absolute;
+  top: 0px;
+  left: 80px;
 }
 
 .message {
@@ -575,8 +576,6 @@ h1 {
   padding: 20px auto;
   display: block;
   height: auto;
-  width: 930px;
-  max-width: 90%;
   margin-top: 75px;
   margin-bottom: 30px;
   margin-left: auto;
@@ -584,6 +583,7 @@ h1 {
   text-align: center;
   position: relative;
   justify-content: center;
+  padding-top: 100px;
 }
 
 .location__map::before {
@@ -598,8 +598,9 @@ h1 {
 }
 
 .location__map h1 {
-  margin-left: 20px;
-  text-align: left;
+  position: absolute;
+  top: -50px;
+  left: 80px;
 }
 
 .location__map iframe {
@@ -672,6 +673,9 @@ h1 {
   text-align: center;
   justify-content: center;
 }
+
+
+/* /footer */
 
 @charset "utf-8";
 
@@ -957,13 +961,14 @@ h1 {
 
   .slogan {
     height: 100%;
-    padding-top: 60px;
+    padding-top: 100px;
+    position: relative;
   }
 
   .slogan h1 {
-    padding: 50px auto 50px;
+    position: absolute;
+    top: 30px;
     margin-left: 40px;
-    margin-bottom: 40px;
   }
 
   .slogan__inner {
@@ -1004,8 +1009,9 @@ h1 {
   }
 
   .messages h1 {
-    position: static;
-    margin: auto;
+    position: absolute;
+    left: 40px;
+    top: 20px;
   }
 
   .message {
@@ -1059,6 +1065,12 @@ h1 {
 
   /* footer */
 
+  .location__map h1 {
+    position: absolute;
+    top: -50px;
+    left: 40px;
+  }
+
   .footer__schoolname {
     font-size: 16px;
     display: block;
@@ -1084,5 +1096,3 @@ h1 {
     text-align: center;
   }
 }
-
-/* /footer */
