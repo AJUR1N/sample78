@@ -42,6 +42,10 @@ body::-webkit-scrollbar {
   display: block;
 }
 
+.br__resp {
+  display: none;
+}
+
 img {
   max-width: 100%;
   flex-shrink: 0;
@@ -152,7 +156,7 @@ h1 {
 }
 
 .site__menu {
-  color: #000000;
+  color: #ffffff;
   font-family: ;
 }
 
@@ -170,7 +174,7 @@ h1 {
 
 /* 下線のスタイル */
 .site__menu a::after {
-  background-color: #333;
+  background-color: #b9b9b9;
   /* 下線の色 */
   bottom: -4px;
   /* 要素の下端からの距離 */
@@ -207,6 +211,15 @@ h1 {
   background-color: #fff;
 } */
 
+.top__view {
+  background-image: url(img/表紙背景仮.JPG);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+}
+
 .top__view__pc {
   height: 80vh;
   min-height: 100%;
@@ -215,11 +228,6 @@ h1 {
   text-align: center;
   justify-content: center;
   align-items: center;
-  background-image: url(img/表紙背景仮.JPG);
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   flex-shrink: 1;
 }
 
@@ -242,9 +250,28 @@ h1 {
 }
 
 .schedule {
-  height: 500px;
+  height: 350px;
   width: 100%;
-  display: flex;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.schedule__day {
+  font-size: 80px;
+  font-family: ;
+  color: white;
+  padding-top: 50px;
+}
+
+.uncho__comment {
+  font-size: 50px;
+  font-family: "HGS行書体", cursive;
+  color: white;
+  padding-top: 30px;
 }
 
 /* /title */
@@ -256,11 +283,11 @@ h1 {
   min-height: 100%;
   max-width: 100%;
   width: 100%;
-  background-image: url(img/スローガン背景仮.JPG);
+  background-image: url(img/slogan__bg.JPG);
   background-size: cover;
   margin: auto;
   padding-top: 20px;
-  margin-bottom: 100px;
+  padding-bottom: 100px;
 }
 
 .slogan h1 {
@@ -287,7 +314,7 @@ h1 {
   font-family: ;
   padding: 5px 0 5px;
   max-height: 100%;
-  width: 95%;
+  width: 104%;
   z-index: 1;
   border: 1px solid black;
   box-shadow: 2px black;
@@ -314,7 +341,7 @@ h1 {
   background-size: cover;
   min-height: 100%;
   padding: 40px 3vw 40px;
-  background: linear-gradient(210deg, #b5f5ff, #fff4e3);
+  background: linear-gradient(210deg, #cbf8ff, #fff4e3);
 }
 
 .messages h1 {
@@ -419,8 +446,10 @@ h1 {
 
 .coming-soon__letter {
   color: rgb(255, 255, 255);
-  font-size: 6.5rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9.5rem;
+  font-family: "Rancho", cursive;
+  font-weight: 400;
+  font-style: normal;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -429,6 +458,9 @@ h1 {
   background: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 300px;
+  color: #ffffff;
+  text-shadow: 0px 4px 4px #000e1f;
+  position: relative;
 }
 
 .coming {
@@ -437,6 +469,7 @@ h1 {
 
 .soon {
   padding-left: 15px;
+  position: relative;
 }
 
 .soon__resp {
@@ -600,7 +633,6 @@ h1 {
 
 .footer__schoolname {
   display: flex;
-  text-align: center;
   align-items: center;
   padding-top: 30px;
   padding-left: 5%;
@@ -641,6 +673,9 @@ h1 {
   justify-content: center;
 }
 
+
+/* /footer */
+
 @charset "utf-8";
 
 @media (max-width: 821px) {
@@ -664,13 +699,17 @@ h1 {
     display: none;
   }
 
+  .br__resp {
+    display: block;
+  }
+
   /* /全体指定 */
 
   /* header */
 
   .header__logo div {
     font-size: 16px;
-    padding-top: 10px;
+    justify-content: center;
   }
 
   .header__logo img {
@@ -754,6 +793,14 @@ h1 {
     top: 5px;
   }
 
+  .hamburger__style[aria-expanded="true"] {
+    border: 1px solid #000000;
+  }
+
+  .hamburger__style[aria-expanded="false"] {
+    border: 1px solid #ffffff;
+  }
+
   .hamburger__style[aria-expanded="true"] .hamburger__style__line {
     background-color: transparent;
   }
@@ -761,7 +808,7 @@ h1 {
   .hamburger__style[aria-expanded="true"] .hamburger__style__line::before,
   .hamburger__style[aria-expanded="true"] .hamburger__style__line::after {
     top: 0;
-    background-color: #ffffff;
+    background-color: #000000;
   }
 
   .hamburger__style[aria-expanded="true"] .hamburger__style__line::before {
@@ -882,11 +929,6 @@ h1 {
     align-items: center;
     justify-content: center;
     position: relative;
-    background-image: url(img/表紙背景仮.JPG);
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     flex-shrink: 1;
     text-align: center;
   }
@@ -899,6 +941,17 @@ h1 {
   .second__text__resp {
     margin: 10vh auto auto;
     width: 45%;
+  }
+
+  .schedule__day {
+    font-size: 67px;
+    padding-top: 50px;
+  }
+
+  .uncho__comment {
+    font-size: 35px;
+    font-family: "HGS行書体", cursive;
+    padding-top: 30px;
   }
 
   /* /title */
@@ -995,10 +1048,16 @@ h1 {
   .coming-soon__letter {
     display: block;
     margin: auto;
+    font-size: 7.5rem;
   }
 
   .soon__resp {
     display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 22px;
   }
 
   /* footer */
@@ -1028,5 +1087,3 @@ h1 {
     text-align: center;
   }
 }
-
-/* /footer */
