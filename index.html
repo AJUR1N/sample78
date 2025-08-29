@@ -1,645 +1,391 @@
-@charset "utf-8";
-
-/* 全体指定 */
-*,
-::before,
-::after {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: antiquewhite;
-  font-family: 'Noto Serif JP', serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 16px;
-  color: #000000;
-  max-width: 100vw;
-  line-height: 1.4;
-  background-color: #ffffff;
-  onselectstart="return false;"
-  onmousedown="return false;"
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  position: relative;
-}
-
-body::-webkit-scrollbar {
-  display: none;
-}
-
-::-webkit-scrollbar {
-  height: 10px;
-  width: 0px;
-}
-
-.br__pc {
-  display: block;
-}
-
-img {
-  max-width: 100%;
-  flex-shrink: 0;
-  pointer-events: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-touch-callout: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-h1 {
-  font-size: 3rem;
-  padding: 0.1em 0.25em;
-  border-left: solid 6px rgba(0, 0, 0, 0.8);
-}
-
-.for__pc {
-  display: contents;
-}
-
-.for__resp {
-  display: none;
-}
-
-.scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-#top-anchor {
-  position: relative;
-  top: -75px;
-}
-
-#about-anchor {
-  position: relative;
-  top: -75px;
-}
-
-#location-anchor {
-  position: relative;
-  top: -75px;
-}
-
-/* /全体指定 */
-
-/* header */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(76, 0, 106, 0.9);
-  box-shadow: 0px 3px 10px rgb(110, 110, 110);
-  z-index: 1000;
-  max-width: 100%;
-  height: 75px;
-  color: white;
-}
-
-.header__filler {
-  height: 75px;
-  width: 100%;
-  background-color: white;
-}
-
-.header__inner {
-  max-width: 100%;
-  height: inherit;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 40px;
-  padding-right: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header__logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10000;
-}
-
-.header__logo img {
-  width: 70px;
-  height: 70px;
-}
-
-.header__logo div {
-  font-size: 18px;
-  justify-content: center;
-}
-
-.site__menu {
-  color: #000000;
-  font-family: ;
-}
-
-.site__menu ul {
-  display: flex;
-  text-align: center;
-  margin: 0 0 0 auto;
-  gap: 50px;
-}
-
-.site__menu a {
-  display: inline-block;
-  position: relative;
-}
-
-/* 下線のスタイル */
-.site__menu a::after {
-  background-color: #333;
-  /* 下線の色 */
-  bottom: -4px;
-  /* 要素の下端からの距離 */
-  content: "";
-  /* 要素に内容を追加 */
-  height: 2px;
-  /* 下線の高さ */
-  left: 0;
-  position: absolute;
-  transform: scale(0, 1);
-  /* 下線を横方向に0倍、縦方向に1倍に変形（非表示） */
-  transform-origin: center top;
-  /* 変形の原点を中央上に指定 */
-  transition: transform .3s;
-  /* 変形をアニメーション化 */
-  width: 100%;
-  /* 要素の幅 */
-}
-
-/* リンクにホバーした際の下線の表示 */
-.site__menu a:hover::after {
-  transform: scale(1, 1);
-  /* 下線を横方向に1倍、縦方向に1倍に変形（表示） */
-}
-
-/* /header */
-
-/* main */
-
-/* title */
-/* .header__filler {
-  height: 90px;
-  width: 100%;
-  background-color: #fff;
-} */
-
-.top__view__pc {
-  height: 80vh;
-  min-height: 100%;
-  display: flex;
-  position: relative;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  background-image: url(img/表紙背景仮.JPG);
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  flex-shrink: 1;
-}
-
-.top__view__daiji {
-  margin: auto;
-}
-
-.first__text__pc img {
-  width: 42%;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
-
-.second__text__pc img {
-  width: 95%;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
-
-.schedule {
-  height: 500px;
-  width: 100%;
-  display: flex;
-}
-
-/* /title */
-
-/* about */
-
-.slogan {
-  height: 100%;
-  min-height: 100%;
-  max-width: 100%;
-  width: 100%;
-  background-image: url(img/スローガン背景仮.JPG);
-  background-size: cover;
-  margin: auto;
-  padding-top: 20px;
-  margin-bottom: 100px;
-}
-
-.slogan h1 {
-  position: relative;
-  font-weight: bold;
-  margin-left: 40px;
-}
-
-.slogan__inner {
-  margin: auto;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-
-.slogan__text {
-  text-align: left;
-  margin-right: 5vw;
-  font-size: 18px;
-}
-
-.slogan__text p {
-  background-color: rgba(10, 10, 10, 0.2);
-  font-family: ;
-  padding: 5px 0 5px;
-  max-height: 100%;
-  width: 95%;
-  z-index: 1;
-  border: 1px solid black;
-  box-shadow: 2px black;
-  text-align: left;
-  margin-top: 50px;
-}
-
-.slogan__inner img {
-  margin-right: 3vw;
-  margin-left: 15px;
-}
-
-.slogan__text__title {
-  font-size: 1.8em;
-  font-weight: 550;
-  font-family: ;
-}
-
-
-
-.messages {
-  margin: auto;
-  position: relative;
-  background-size: cover;
-  min-height: 100%;
-  padding: 40px 3vw 40px;
-  background: linear-gradient(210deg, #b5f5ff, #fff4e3);
-}
-
-.messages h1 {
-  position: relative;
-  top: -20px;
-  left: 20px;
-}
-
-.message {
-  display: flex;
-  margin: auto;
-  padding: 30px;
-  justify-content: left;
-  text-align: center;
-}
-
-.message img {
-  width: 35%;
-  height: 35%;
-  box-shadow: 0px 0px 7px 2px black;
-}
-
-.message h2 {
-  font-weight: bold;
-}
-
-.message__text {
-  background-color: rgba(255, 255, 255, 0.25);
-  width: 100%;
-  min-height: 100%;
-  border: 2px solid #000000;
-  box-shadow: #000000;
-  margin-left: 70px;
-  margin-right: auto;
-  padding-bottom: 12px;
-  position: relative;
-}
-
-.message__text h2 {
-  margin: 12px auto 6px;
-  font-weight: 600;
-  font-size: 2em;
-}
-
-.message__text h3 {
-  margin: 0 auto 12px;
-  font-weight: 500;
-  font-size: 1.5rem;
-}
-
-.message__text p {
-  padding-left: 20px;
-  padding-right: 20px;
-  font-size: 18px;
-}
-
-.message__line__top {
-  margin: 10px auto 10px;
-  width: 95%;
-  background-color: #333333;
-  height: 2px;
-}
-
-.message__line__inside {
-  margin: 10px auto;
-  width: 95%;
-  background-color: #333333;
-  height: 2px;
-}
-
-.message__line__bottom {
-  width: 95%;
-  background-color: #333333;
-  height: 2px;
-  position: absolute;
-  bottom: 7px;
-  right: auto;
-  left: 2.5%;
-}
-
-.somu {}
-
-.somu__message img {
-  margin: auto;
-  width: 95%;
-  box-shadow: none;
-}
-
-
-/* /about */
-
-/* coming-soon */
-.coming-soon {
-  height: 300px;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  z-index: 6;
-  overflow: hidden;
-  position: relative;
-}
-
-.coming-soon__letter {
-  color: rgb(255, 255, 255);
-  font-size: 6.5rem;
-  font-family: Arial, Helvetica, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  z-index: 8;
-  background: rgba(0, 0, 0, 0.6);
-  width: 100%;
-  height: 300px;
-}
-
-.coming {
-  padding-right: 15px;
-}
-
-.soon {
-  padding-left: 15px;
-}
-
-.soon__resp {
-  display: flex;
-  justify-content: center;
-}
-
-@keyframes infinity-scroll-left {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-.scroll-infinity {
-  position: absolute;
-  z-index: -20;
-}
-
-.scroll-infinity__wrap {
-  display: flex;
-  overflow: hidden;
-  z-index: -20;
-}
-
-.scroll-infinity__list {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  z-index: -20;
-}
-
-.scroll-infinity__list--left {
-  animation: infinity-scroll-left 100s infinite linear 0.5s both;
-  z-index: -20;
-}
-
-.scroll-infinity__item {
-  width: 2000px;
-  z-index: -20;
-}
-
-.scroll-infinity__item>img {
-  width: 2000px;
-  height: 300px;
-  z-index: -20;
-}
-
-.loading-animation {
-  margin-left: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.loading-animation>div {
-  width: 10px;
-  height: 10px;
-  margin: 10px;
-  background-color: white;
-  border-radius: 50%;
-  animation: loading 1s ease-in-out infinite;
-}
-
-.loading-animation>div:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.loading-animation>div:nth-child(3) {
-  animation-delay: 0.4s;
-}
-
-@keyframes loading {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(2);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-.coming__soon__black {
-  width: 100%;
-  height: 300px;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  z-index: 50;
-}
-
-/* /coming-soon */
-
-/* location__map */
-
-.location__map {
-  padding: 20px auto;
-  display: block;
-  height: auto;
-  width: 930px;
-  max-width: 90%;
-  margin-top: 75px;
-  margin-bottom: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  position: relative;
-  justify-content: center;
-}
-
-.location__map::before {
-  content: "";
-  position: absolute;
-  top: -80px;
-  width: 100vw;
-  height: calc(100% + 110px);
-  margin-left: -50vw;
-  background: linear-gradient(0deg, rgb(0, 183, 255), rgb(179, 255, 252));
-  z-index: -100;
-}
-
-.location__map h1 {
-  margin-left: 20px;
-  text-align: left;
-}
-
-.location__map iframe {
-  aspect-ratio: 16/9;
-  display: block;
-  width: 80%;
-  margin-top: 25px;
-  border: solid 5px #0069a2;
-  padding: 0px;
-  text-align: center;
-  margin: auto;
-}
-
-.google__map {
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  padding: auto;
-  margin: auto;
-}
-
-
-/* /location__map */
-
-/* footer */
-.footer {
-  background-color: black;
-  color: white;
-  height: 300px;
-}
-
-.footer__schoolname {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  padding-top: 30px;
-  padding-left: 5%;
-}
-
-.footer__logo {
-  width: 60px;
-  height: 60px;
-  margin-right: 5px;
-}
-
-.footer__site__menu {
-  margin-top: 50px;
-}
-
-.footer__nav__items {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-
-.footer__nav__items__item {
-  margin: 0 15px 0;
-  padding: 0 10px 0;
-}
-
-.footer__line {
-  margin: 30px auto 30px auto;
-  background-color: white;
-  height: 2px;
-  width: 80%;
-}
-
-.footer__departmentName {
-  font-size: 16px;
-  font-family: ;
-  text-align: center;
-  justify-content: center;
-}
-
 
-/* /footer */
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>第78回修猷大運動会公式HP</title>
+    <meta name="description" content="第78回修猷大運動会の魅力や情報をお伝えします。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="icon" href> -->
+
+    <!-- css --> <!-- wordpress以降不必要 -->
+    <link rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_resp.css">
+
+    <!-- SEO --> <!-- wordpress以降不必要 -->
+    <link rel="canonical"
+      href="https://shuyu.fku.ed.jp/ichinen_r07/%E5%A4%A7%E9%81%8B%E5%8B%95%E4%BC%9A/"><!-- このページのURLを指定 -->
+    <link rel="icon" href="img/77th/六光星.png" sizes="32x32" /><!-- 修猷アイコンを指定 -->
+    <link rel="icon" href="img/77th/六光星.png" sizes="192x192" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap"
+      rel="stylesheet">
+
+    <!-- js,jQuary -->
+  </head>
+
+  <!-- body -->
+  <body id="body">
+
+    <!-- content -->
+    <div id="content">
+
+      <header class="header">
+        <div class="header__inner">
+          <a class="header__logo" href="https://shuyu.fku.ed.jp/">
+            <img src="img/77th/六光星.png" alt="HOME">
+            <div>福岡県立<br>修猷館高等学校</div>
+          </a>
+          <nav class="site__menu nav__content" id="js-nav">
+            <ul class="nav__items nav__list">
+              <li class="nav__items__item"><a
+                  href="#top-anchor">Top</a></li>
+              <li class="nav__items__item"><a
+                  href="#about-anchor">About</a></li>
+              <li class="nav__items__item"><a
+                  href="#location-anchor">Location</a></li>
+              <!--               <li class="nav__items__item"><a
+                  href="program-anchor">Program</a></li>
+              <li class="nav__items__item"><a
+                  href="block-anchor">Block</a></li> -->
+            </ul>
+            <div class="site__menu__margin" id="js-margin"></div>
+          </nav>
+          <div class="hamburger__menu__button for__resp">
+            <button type="button" id="js-buttonHamburger"
+              class="button__design hamburger__style active"
+              aria-controls="global-nav"
+              aria-expanded="false">
+              <span class="hamburger__style__line">
+                <span class="u-visuallyHidden">
+                  メニューを開閉する
+                </span>
+              </span>
+            </button>
+            <script>
+                const ham = document.querySelector('#js-buttonHamburger'); //js-buttonHamburgerの要素を取得し、変数hamに格納
+                const nav = document.querySelector('#js-nav'); //js-navの要素を取得し、変数navに格納
+                const mgn = document.querySelector('#js-margin'); //js-marginの要素を取得し、変数mgnに格納
+
+                ham.addEventListener('click', function () { //ハンバーガーメニューをクリックしたら
+                ham.classList.toggle('active'); // ハンバーガーメニューにactiveクラスを付け外し
+                nav.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
+                mgn.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
+
+                });
+                nav.addEventListener('click', function () { //ナビゲーションリストをクリックしたら
+                ham.classList.toggle('active'); // ハンバーガーメニューにactiveクラスを付け外し
+                nav.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
+                mgn.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
+
+                });
+
+              /* ハンバーガーボタンのアニメーション */
+                const hamburgerButton = document.querySelector('#js-buttonHamburger');
+
+                hamburgerButton.addEventListener('click', (e) => {
+                const isExpanded = e.currentTarget.getAttribute("aria-expanded") !== "false";
+                e.currentTarget.setAttribute("aria-expanded", !isExpanded);
+  
+                document.documentElement.classList.toggle("is-drawerActive");
+                })
+
+                nav.addEventListener('click', (e) => {
+                const isExpanded = e.currentTarget.getAttribute("aria-expanded") !== "false";
+                e.currentTarget.setAttribute("aria-expanded", !isExpanded);
+  
+                document.documentElement.classList.toggle("is-drawerActive");
+                })
+                
+              </script>
+          </div>
+        </div>
+      </header>
+      <!-- /header -->
+
+      <!-- main -->
+      <main id="main">
+
+        <!-- title -->
+        <div class="header__filler"></div>
+        <div id="top-anchor"></div>
+        <div class="top__view">
+          <div class="top__view__pc for__pc">
+            <div class="top__view__daiji">
+              <div class="first__text__pc">
+                <img src="img/題字/題字_第78回_横_縁取り.png" alt="第78回">
+              </div>
+              <div class="second__text__pc">
+                <img src="img/題字/題字_修猷大運動会_横_縁取り.png" alt="修猷大運動会">
+              </div>
+            </div>
+          </div>
+
+          <div class="top__view__resp for__resp">
+            <div class="first__text__resp">
+              <img src="img/題字/題字_修猷大運動会_縦_縁取り.png" alt="修猷大運動会">
+            </div>
+            <div class="second__text__resp">
+              <img src="img/題字/題字_第78回_縦_縁取り.png" alt="第78回">
+            </div>
+          </div>
+
+          <div class="schedule">
+            <div class="schedule__day">- R7. 9/6 -</div>
+            <div class="uncho__comment">修猷健児、<br
+                class="br__resp">気魄を胸に今立ちぬ</div>
+          </div>
+        </div>
+        <!-- /title -->
+
+        <!-- about -->
+        <div id="about-anchor"></div>
+
+        <div class="slogan">
+          <h1 class="titles">slogan</h1>
+          <div class="slogan__inner">
+            <img src="img/題字/78th夏_スローガン_気魄-removebg-preview.png" alt="slogan">
+            <div class="slogan__text">
+              <p>
+                <span class="slogan__text__title">『気魄』</span><br>
+                修猷生にとって気魄とは何か、すべてである。<br class="br__pc">
+                気魄とは、何ものにも屈せず立ち向かっていく<br class="br__pc">
+                強い精神力を意味する。<br>
+                この「魄」という文字は、「我々の体躯に漲る、<br class="br__pc">
+                気概や気合といった”たましい”そのもの」という意味であり、<br>
+                我々修猷生は、この修猷生による修猷生のための<br class="br__pc">
+                修猷大運動会に、文字通り全身全霊、”魄”を懸け、<br class="br__pc">
+                修猷生個々の強い覚悟や決意を示す。<br>
+                我々ならば、修猷生の持つ気魄を余すことなく発揮し、<br class="br__pc">
+                修猷生の心に永久に刻まれるような、過去最高の大運動会を<br class="br__pc">
+                創り上げることができるはずだ。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="messages">
+          <h1 class="titles">Messages</h1>
+          <div class="message kancho">
+            <img src="img/野本準二館長__trim.jpg" alt="館長">
+            <div class="message__text">
+              <div class="message__line__top"></div>
+              <h2>野本 準二</h2>
+              <h3>館長</h3>
+              <div class="message__line__inside"></div>
+              <p>
+                &emsp;伝統の大運動会。伝統とは、時代ごとの先輩たちが、仲間とともに悩み、考え、挑み続ける中で築き上げた、
+                かけがえのない思いの積み重ねである。君たちは今、その最先端に立ち、何を守り、何を考え、
+                そして何を未来へ手渡すのかを問い続けながら、全力でこの大運動会に臨んでいる。<br>
+                &emsp;「全力で」と一口にいうが、全力で何かに取り組む経験をしたか、しなかったか、それによってその後の人生は大きく変わる。たとえ、それが青春における一瞬であっても、その一瞬が人生を大きく変える。大運動会は、そうした人生の礎を築く機会でもある。
+                自らの限界に挑戦し、仲間とともに心を重ねたかけがえのない記憶。君だけの、そして、君たちだけのひと夏をかけた物語。修猷館の熱い魂を見せる夏が来た。
+              </p>
+              <div class="message__line__bottom"></div>
+            </div>
+          </div>
+
+          <div class="message uncho">
+            <img src="img/78th夏運長__trim.jpg" alt="運営委員長">
+            <div class="message__text">
+              <div class="message__line__top"></div>
+              <h2>下釜 大地</h2>
+              <h3>第78回修猷大運動会運営委員長</h3>
+              <div class="message__line__inside"></div>
+              <p>
+                &emsp;第78回修猷大運動会。遂に我々の気魄を顕す時がやって来た。<br>
+                &emsp;我々は今日、77代にもわたる蓄積の頂に、第78回修猷大運動会を我々の手で創り上げる。
+                そして、我々は過去築かれてきた越えがたい壁を今日越えていかなければならない。
+                しかし、私はその聳え立つ壁を越えることができると、胸を張って断言できる。
+                我々は今日まで、高い目標をひたむきに追いかけ、己の限界に挑戦し、仲間と鼓舞し合いながら共に進んできた。
+                我々一人一人の小さな個人が、軌を一にし、個々の持つ莫大な可能性を互いに引き出してきた。
+                我々に宿る計り知れない可能性が、未だ誰も見たことがない頂への猷を明るく照らしている。<br>
+                &emsp;今日は修猷の祭典である。我々から滲み出る熱気、肉体の躍動、天を突く歓声、そして涙―。
+                それらが熱き炎となってグラウンドを覆い尽くし、すべての心を揺さぶるだろう。
+                さあ修猷生よ、気魄の限りを尽くし、ぶつかり合い、共に支え合って、互いの存在を確かめ合おうではないか。
+                今日は誰よりも力強く、余すことなく気魄を顕せ。
+              </p>
+              <div class="message__line__bottom"></div>
+            </div>
+          </div>
+
+          <div class="message somu">
+            <img src="img/78th夏総務__trim.jpg" alt="生徒会総務">
+            <div class="message__text">
+              <div class="message__line__top"></div>
+              <h2>深野 陽斗</h2>
+              <h3>生徒会総務</h3>
+              <div class="message__line__inside"></div>
+              <div class="somu__message">
+                <div class="for__pc">
+                  <img src="img/総務_巻頭言/総務_黒3_bold.png" alt="総務巻頭言">
+                </div>
+                <div class="for__resp somu__resp">
+                  <img src="img/総務_巻頭言/総務_黒3_bold_resp.png" alt="総務巻頭言">
+                </div>
+              </div>
+              <div class="message__line__bottom"></div>
+            </div>
+          </div>
+        </div>
+        <!-- /about -->
+
+        <!-- coming-soon -->
+        <div class="coming-soon">
+
+          <div class="coming-soon__letter" id="content-container">
+            <div class="coming">Coming</div>
+            <div class="soon__resp">
+              <div class="soon">soon</div>
+
+              <div class="loading-animation">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+          </div>
+          <script>
+  var mybubbles = document.getElementsByClassName("ani-bubble");
+
+var bubblecolors = [ "#c5a5ab", "#e3e2dd", "#87a6c0" ];
+
+for (var i = 0; i < mybubbles.length; i++) {
+
+  mybubbles[i].style.backgroundColor = bubblecolors[Math.floor(Math.random() * bubblecolors.length)];
+  mybubbles[i].style.opacity = Math.random()*.75;
+
+  var bubblesize = (Math.floor(Math.random() * 9)+2) * 50;
+
+  mybubbles[i].style.width = bubblesize+"px";
+  mybubbles[i].style.height = bubblesize+"px";
+  mybubbles[i].style.borderRadius = (bubblesize/2)+"px";
+
+  mybubbles[i].style.left = Math.floor(Math.random() * 100) + "%";
+
+  mybubbles[i].style.animationDuration = Math.floor(Math.random() * 16)+8 + "s";
+  mybubbles[i].style.animationDelay = Math.floor(Math.random() * 8) + "s";
+
+}
+
+$( document ).ready(function() {
+  jQuery.expr.filters.offscreen = function(el) {
+  return (
+      (el.offsetLeft + el.offsetWidth) < 0 
+      || (el.offsetTop + el.offsetHeight) < 0
+      || (el.offsetLeft > window.innerWidth || el.offsetTop > window.innerHeight)
+    );  
+    };
+  setInterval(function(){
+    $('.ani-bubble').each(function(){
+      if($(this).is(':offscreen')){
+       var bubbleoffset = Math.floor((Math.random() * 140) - 19);
+         $(this).css({ 'left': bubbleoffset+'%' }); 
+      }
+    });
+  },50);
+});
+</script>
+
+          <div class="scroll-infinity">
+            <div class="scroll-infinity__wrap">
+              <ul class="scroll-infinity__list scroll-infinity__list--left">
+                <li class="scroll-infinity__item"><img
+                    src="img/back/赤第１バック_trim.jpg" /></li>
+                <li class="scroll-infinity__item"><img
+                    src="img/back/青第１バック_trim.jpg" /></li>
+                <li class="scroll-infinity__item"><img
+                    src="img/back/白第１バック_trim.jpg" /></li>
+                <li class="scroll-infinity__item"><img
+                    src="img/back/黄第１バック_trim.jpg" /></li>
+              </ul>
+              <ul class="scroll-infinity__list scroll-infinity__list--left">
+                <li class="scroll-infinity__item"><img
+                    src="img/back/赤第１バック_trim.jpg" /></li>
+                <li class="scroll-infinity__item"><img
+                    src="img/back/青第１バック_trim.jpg" /></li>
+                <li class="scroll-infinity__item"><img
+                    src="img/back/白第１バック_trim.jpg" /></li>
+                <li class="scroll-infinity__item"><img
+                    src="img/back/黄第１バック_trim.jpg" /></li>
+              </ul>
+            </div>
+
+            <div class="coming__soon__black"></div>
+          </div>
+
+        </div>
+        <!-- /coming-soon -->
+
+        <!-- artworks -->
+        <!-- <div id="artworks-anchor"></div>
+        <div class="artworks">
+          <h1 class="titles">artworks</h1>
+          <div class="artworks__container">
+
+          </div>
+        </div> -->
+
+      </main>
+      <!-- /main -->
+
+      <!-- location__map -->
+      <div class="location__map">
+        <div id="location-anchor"></div>
+        <h1 class="titles">location</h1>
+        <div class="google__map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.8249995230126!2d130.35634102207928!3d33.583892712281575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354193a435436e39%3A0x27c45e52483debbe!2z56aP5bKh55yM56uL5L-u54y36aSo6auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1754528846644!5m2!1sja!2sjp"
+            style="border:0;" allowfullscreen
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <!-- /location__map -->
+
+      <!-- footer -->
+      <footer class="footer">
+        <nav class="site__menu__footer">
+
+        </nav>
+        <div class="footer__schoolname">
+          <img src="img/77th/六光星.png" alt="SHUYU" class="footer__logo">
+          <p>福岡県立 修猷館高等学校<br>第78回修猷大運動会公式HP</p>
+        </div>
+        <nav class="footer__site__menu">
+          <ul class="footer__nav__items">
+            <li class="footer__nav__items__item"><a
+                href="#top-anchor">Top</a></li>
+            <li class="footer__nav__items__item"><a
+                href="#about-anchor">About</a></li>
+            <li class="footer__nav__items__item"><a
+                href="#location-anchor">Location</a></li>
+            <!--             <li class="footer__nav__items__item"><a
+                href="#artworks-anchor">Artworks</a></li>
+            <li class="footer__nav__items__item"><a
+                href="program-anchor">Program</a></li>
+            <li class="footer__nav__items__item"><a
+                href="block-anchor">Blocks</a></li> -->
+          </ul>
+        </nav>
+        <div class="footer__line"></div>
+        <p class="footer__departmentName">&copy;第78回修猷大運動会運営委員会広報部署</p>
+      </footer>
+      <!-- /footer -->
+    </div>
+    <!-- content -->
+
+    <!-- script -->
+    <script>
+  
+    </script>
+    <!-- /script -->
+  </body>
+  <!-- /body -->
+</html>
