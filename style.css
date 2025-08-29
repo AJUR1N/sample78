@@ -283,7 +283,7 @@ h1 {
   min-height: 100%;
   max-width: 100%;
   width: 100%;
-  background-image: url(img/slogan__bg.JPG);
+  background-image: url(img/slogan__bg.jpg);
   background-size: cover;
   margin: auto;
   padding-top: 20px;
@@ -1084,6 +1084,5 @@ h1 {
     text-align: center;
   }
 }
-
 
 /* /footer */
