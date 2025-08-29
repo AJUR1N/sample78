@@ -212,7 +212,7 @@ h1 {
 } */
 
 .top__view {
-  background-image: url(img/表紙背景仮.JPG);
+  background-image: url(img/top__bg.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -673,9 +673,6 @@ h1 {
   justify-content: center;
 }
 
-
-/* /footer */
-
 @charset "utf-8";
 
 @media (max-width: 821px) {
@@ -1087,3 +1084,6 @@ h1 {
     text-align: center;
   }
 }
+
+
+/* /footer */
