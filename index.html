@@ -75,34 +75,62 @@
                 const ham = document.querySelector('#js-buttonHamburger'); //js-buttonHamburgerの要素を取得し、変数hamに格納
                 const nav = document.querySelector('#js-nav'); //js-navの要素を取得し、変数navに格納
                 const mgn = document.querySelector('#js-margin'); //js-marginの要素を取得し、変数mgnに格納
+                const lis = document.getElementsByClassName("nav__items__item");
+                let tf = false;
+                ham.setAttribute("aria-expanded", false);
 
                 ham.addEventListener('click', function () { //ハンバーガーメニューをクリックしたら
-                ham.classList.toggle('active'); // ハンバーガーメニューにactiveクラスを付け外し
-                nav.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
-                mgn.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
+                  ham.classList.toggle('active'); // ハンバーガーメニューにactiveクラスを付け外し
+                  nav.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
+                  mgn.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
+                  if(tf.toString() != ham.getAttribute("aria-expanded")){
+                    tf = ham.getAttribute("aria-expanded");
+                  }
+                  if(tf){
+                    tf = false;
+                  }else{
+                    tf = true;
+                  }
+                  ham.setAttribute("aria-expanded", tf);
+                  document.documentElement.classList.toggle("is-drawerActive");
 
                 });
-                nav.addEventListener('click', function () { //ナビゲーションリストをクリックしたら
-                ham.classList.toggle('active'); // ハンバーガーメニューにactiveクラスを付け外し
-                nav.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
-                mgn.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
 
-                const isExpanded = e.currentTarget.getAttribute("aria-expanded") !== "false";
-                e.currentTarget.setAttribute("aria-expanded", !isExpanded);
-  
-                document.documentElement.classList.toggle("is-drawerActive");
-
+                mgn.addEventListener('click', function () { //ナビゲーションリストをクリックしたら
+                  ham.classList.toggle('active'); // ハンバーガーメニューにactiveクラスを付け外し
+                  nav.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
+                  mgn.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
+                  tf = false;
+                  ham.setAttribute("aria-expanded", tf);
+                  document.documentElement.classList.toggle("is-drawerActive");
                 });
 
-              /* ハンバーガーボタンのアニメーション */
-                const hamburgerButton = document.querySelector('#js-buttonHamburger');
+                lis[0].addEventListener('click', function () { //ナビゲーションリストをクリックしたら
+                  ham.classList.toggle('active'); // ハンバーガーメニューにactiveクラスを付け外し
+                  nav.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
+                  mgn.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
+                  tf = false;
+                  ham.setAttribute("aria-expanded", tf);
+                  document.documentElement.classList.toggle("is-drawerActive");
+                });
 
-                hamburgerButton.addEventListener('click', (e) => {
-                const isExpanded = e.currentTarget.getAttribute("aria-expanded") !== "false";
-                e.currentTarget.setAttribute("aria-expanded", !isExpanded);
-  
-                document.documentElement.classList.toggle("is-drawerActive");
-                })
+                lis[1].addEventListener('click', function () { //ナビゲーションリストをクリックしたら
+                  ham.classList.toggle('active'); // ハンバーガーメニューにactiveクラスを付け外し
+                  nav.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
+                  mgn.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
+                  tf = false;
+                  ham.setAttribute("aria-expanded", tf);
+                  document.documentElement.classList.toggle("is-drawerActive");
+                });
+
+                lis[2].addEventListener('click', function () { //ナビゲーションリストをクリックしたら
+                  ham.classList.toggle('active'); // ハンバーガーメニューにactiveクラスを付け外し
+                  nav.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
+                  mgn.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
+                  tf = false;
+                  ham.setAttribute("aria-expanded", tf);
+                  document.documentElement.classList.toggle("is-drawerActive");
+                });
                 
               </script>
           </div>
@@ -252,46 +280,39 @@
             </div>
           </div>
           <script>
-  var mybubbles = document.getElementsByClassName("ani-bubble");
+          var mybubbles = document.getElementsByClassName("ani-bubble");
+          var bubblecolors = [ "#c5a5ab", "#e3e2dd", "#87a6c0" ];
 
-var bubblecolors = [ "#c5a5ab", "#e3e2dd", "#87a6c0" ];
+          for (var i = 0; i < mybubbles.length; i++) {
+            mybubbles[i].style.backgroundColor = bubblecolors[Math.floor(Math.random() * bubblecolors.length)];
+            mybubbles[i].style.opacity = Math.random()*.75;
+            var bubblesize = (Math.floor(Math.random() * 9)+2) * 50;
+            mybubbles[i].style.width = bubblesize+"px";
+            mybubbles[i].style.height = bubblesize+"px";
+            mybubbles[i].style.borderRadius = (bubblesize/2)+"px";
+            mybubbles[i].style.left = Math.floor(Math.random() * 100) + "%";
+            mybubbles[i].style.animationDuration = Math.floor(Math.random() * 16)+8 + "s";
+            mybubbles[i].style.animationDelay = Math.floor(Math.random() * 8) + "s";
+          }
 
-for (var i = 0; i < mybubbles.length; i++) {
-
-  mybubbles[i].style.backgroundColor = bubblecolors[Math.floor(Math.random() * bubblecolors.length)];
-  mybubbles[i].style.opacity = Math.random()*.75;
-
-  var bubblesize = (Math.floor(Math.random() * 9)+2) * 50;
-
-  mybubbles[i].style.width = bubblesize+"px";
-  mybubbles[i].style.height = bubblesize+"px";
-  mybubbles[i].style.borderRadius = (bubblesize/2)+"px";
-
-  mybubbles[i].style.left = Math.floor(Math.random() * 100) + "%";
-
-  mybubbles[i].style.animationDuration = Math.floor(Math.random() * 16)+8 + "s";
-  mybubbles[i].style.animationDelay = Math.floor(Math.random() * 8) + "s";
-
-}
-
-$( document ).ready(function() {
-  jQuery.expr.filters.offscreen = function(el) {
-  return (
-      (el.offsetLeft + el.offsetWidth) < 0 
-      || (el.offsetTop + el.offsetHeight) < 0
-      || (el.offsetLeft > window.innerWidth || el.offsetTop > window.innerHeight)
-    );  
-    };
-  setInterval(function(){
-    $('.ani-bubble').each(function(){
-      if($(this).is(':offscreen')){
-       var bubbleoffset = Math.floor((Math.random() * 140) - 19);
-         $(this).css({ 'left': bubbleoffset+'%' }); 
-      }
-    });
-  },50);
-});
-</script>
+          $( document ).ready(function() {
+            jQuery.expr.filters.offscreen = function(el) {
+              return (
+                (el.offsetLeft + el.offsetWidth) < 0 
+                || (el.offsetTop + el.offsetHeight) < 0
+                || (el.offsetLeft > window.innerWidth || el.offsetTop > window.innerHeight)
+              );
+            };
+            setInterval(function(){
+              $('.ani-bubble').each(function(){
+                if($(this).is(':offscreen')){
+                  var bubbleoffset = Math.floor((Math.random() * 140) - 19);
+                  $(this).css({ 'left': bubbleoffset+'%' }); 
+                }
+              });
+            },50);
+          });
+          </script>
 
           <div class="scroll-infinity">
             <div class="scroll-infinity__wrap">
@@ -382,7 +403,6 @@ $( document ).ready(function() {
 
     <!-- script -->
     <script>
-  
     </script>
     <!-- /script -->
   </body>
