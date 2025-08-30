@@ -72,6 +72,9 @@
               </span>
             </button>
             <script>
+                function handleTouchMove(event){
+                  event.preventDefault();
+                }
                 const ham = document.querySelector('#js-buttonHamburger'); //js-buttonHamburgerの要素を取得し、変数hamに格納
                 const nav = document.querySelector('#js-nav'); //js-navの要素を取得し、変数navに格納
                 const mgn = document.querySelector('#js-margin'); //js-marginの要素を取得し、変数mgnに格納
@@ -88,48 +91,45 @@
                   }
                   if(tf){
                     tf = false;
+                    document.removeEventListener('touchmove', handleTouchMove, {passive: false});
+                    document.body.style.overflow = "auto";
                   }else{
                     tf = true;
+                    document.addEventListener('touchmove', handleTouchMove, {passive: false});
+                    document.body.style.overflow = "hidden";
                   }
                   ham.setAttribute("aria-expanded", tf);
                   document.documentElement.classList.toggle("is-drawerActive");
 
                 });
 
-                mgn.addEventListener('click', function () { //ナビゲーションリストをクリックしたら
-                  ham.classList.toggle('active'); // ハンバーガーメニューにactiveクラスを付け外し
-                  nav.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
-                  mgn.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
+                function closeHamburger () {
+                  if(ham.classList.contains('active') || nav.classList.contains('active') || mgn.classList.contains('active')){
+                    ham.classList.remove('active'); // ハンバーガーメニューにactiveクラスを付け外し
+                    nav.classList.remove('active'); // ナビゲーションメニューにactiveクラスを付け外し
+                    mgn.classList.remove('active'); // ナビゲーションメニューにactiveクラスを付け外し
+                  }
                   tf = false;
                   ham.setAttribute("aria-expanded", tf);
+                  document.removeEventListener('touchmove', handleTouchMove, {passive: false});
+                  document.body.style.overflow = "auto";
                   document.documentElement.classList.toggle("is-drawerActive");
+                }
+
+                mgn.addEventListener('click', function () {
+                  closeHamburger();
                 });
 
-                lis[0].addEventListener('click', function () { //ナビゲーションリストをクリックしたら
-                  ham.classList.toggle('active'); // ハンバーガーメニューにactiveクラスを付け外し
-                  nav.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
-                  mgn.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
-                  tf = false;
-                  ham.setAttribute("aria-expanded", tf);
-                  document.documentElement.classList.toggle("is-drawerActive");
+                lis[0].addEventListener('click', function () {
+                  closeHamburger();
                 });
 
-                lis[1].addEventListener('click', function () { //ナビゲーションリストをクリックしたら
-                  ham.classList.toggle('active'); // ハンバーガーメニューにactiveクラスを付け外し
-                  nav.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
-                  mgn.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
-                  tf = false;
-                  ham.setAttribute("aria-expanded", tf);
-                  document.documentElement.classList.toggle("is-drawerActive");
+                lis[1].addEventListener('click', function () {
+                  closeHamburger();
                 });
 
-                lis[2].addEventListener('click', function () { //ナビゲーションリストをクリックしたら
-                  ham.classList.toggle('active'); // ハンバーガーメニューにactiveクラスを付け外し
-                  nav.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
-                  mgn.classList.toggle('active'); // ナビゲーションメニューにactiveクラスを付け外し
-                  tf = false;
-                  ham.setAttribute("aria-expanded", tf);
-                  document.documentElement.classList.toggle("is-drawerActive");
+                lis[2].addEventListener('click', function () {
+                  closeHamburger();
                 });
                 
               </script>
